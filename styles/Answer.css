@@ -1,0 +1,79 @@
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    color: black;
+}
+
+.question-section {
+    width: 65%;
+    border: 2px solid black;
+    padding: 20px;
+    background: white;
+}
+
+.question-card {
+    border: 1px solid black;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.option input {
+    margin-right: 10px;
+}
+
+.submit-btn {
+    margin-top: 10px;
+    background: black;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.dashboard {
+    width: 30%;
+    border: 2px solid black;
+    background: #d3d3d3;
+    padding: 20px;
+}
+
+.timer-btn {
+    width: 100%;
+    background: blue;
+    color: white;
+    padding: 10px;
+    border: none;
+}
+
+.dashboard-info {
+    background: white;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.submit-exam-btn {
+    margin-top: 10px;
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 10px;
+    border: none;
+}
+
+/* Answer.css */
+
+
+.question-card h3,
+.question-card p,
+.option label,
+.dashboard-info h3,
+.dashboard-info p {
+    color: black;
+}
