@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import crypto from "crypto";
-import styles from "../../styles/SelectedQuestions.module.css";
+//import styles from "../../styles/SelectedQuestions.module.css";
 
 // Smart Contract Details (Replace with actual values)
 const CONTRACT_ADDRESS = "0xBD88298440dc0b049cD35111EEa8F82AC467a5E1";

@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { createHelia } from "helia";
 import { json } from "@helia/json";
 import crypto from "crypto";
-import styles from "../../styles/ViewQuestion.module.css";
+//import styles from "../../styles/ViewQuestion.module.css";
 
 const ENCRYPTION_KEY = "0123456789abcdef0123456789abcdef";
 const IV_LENGTH = 16;
