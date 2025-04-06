@@ -1,5 +1,4 @@
-
-
+/* General Styling */
 .container {
     display: flex;
     height: 100vh;
@@ -7,6 +6,8 @@
     background-color: #f4f4f9;
     font-family: Arial, sans-serif;
 }
+
+
 
 /* Left Panel Styling */
 .leftPanel {
@@ -25,6 +26,9 @@
     font-size: 18px;
     margin-bottom: 20px;
     color: #333;
+}
+.heading{
+    text:bold
 }
 
 /* Create Examination Button */
@@ -55,7 +59,7 @@
 }
 
 /* Admin Header */
-.adminHeader {
+.teacherHeader {
     font-weight: bold;
     font-size: 16px;
     margin-bottom: 10px;
@@ -78,93 +82,124 @@
 
 .adminInfo .info {
     font-weight: 700;
-    /* Ensures bold text */
     color: #222;
-    /* Darker color for emphasis */
 }
 
-.adminText,
+.teacherText,
 .examText {
     color: black;
-    /* Set text color to black */
 }
 
-
-.modal {
+/* Modal Overlay */
+.modalOverlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    /* Dark overlay */
-    color: black;
+    height: 100vh;
+    /* Ensure full-screen overlay */
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background */
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
 }
 
-/* Modal Content */
-.modalContent {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
+/* Modal Container */
+.modal {
+    background: #fff;
+    padding: 20px;
     width: 400px;
+    max-width: 90%;
+    /* Ensures it fits smaller screens */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Input Field */
-.inputField {
+/* Modal Title */
+.modal h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Input Fields */
+.modal input,
+.modal textarea {
     width: 100%;
     padding: 10px;
-    background-color: white;
-    color: black;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    background-color: white;
+    /* Fixed transparency issue */
+    color: black;
+}
+
+/* Textarea Specific Styling */
+.modal textarea {
+    height: 80px;
+    resize: none;
 }
 
 /* Buttons */
-.submitButton {
-    background: #4CAF50;
-    color: white;
+.modal button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
     border: none;
-    padding: 10px 15px;
-    margin: 10px;
-    cursor: pointer;
-    font-size: 16px;
     border-radius: 5px;
-    transition: 0.3s;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
 }
 
-.submitButton:hover {
-    background: #45a049;
+.modal input[type="datetime-local"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+    /* Ensure it's visible */
+    color: black;
+    appearance: auto;
+    /* Ensures native styling is applied */
 }
 
-.cancelButton {
-    background: #f44336;
+/* Fix for WebKit Browsers */
+.modal input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    display: block !important;
+    /* Ensure it's visible */
+    cursor: pointer;
+    filter: invert(0);
+    /* Ensure it’s not hidden */
+}
+
+/* Submit Button */
+.modal button[type="submit"] {
+    background: #28a745;
     color: white;
-    border: none;
-    padding: 10px 15px;
-    margin: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: 0.3s;
 }
 
-.cancelButton:hover {
-    background: #d32f2f;
+.modal button[type="submit"]:hover {
+    background: #218838;
 }
 
-/* Error Message */
-.error {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
+/* Cancel Button */
+.modal button[type="button"] {
+    background: #dc3545;
+    color: white;
+}
+
+.modal button[type="button"]:hover {
+    background: #c82333;
 }
 
 /* Fade-in Animation */
@@ -178,4 +213,77 @@
         opacity: 1;
         transform: scale(1);
     }
+}
+
+.examHeader {
+    font-size: 22px;
+    margin-top: 20px;
+    color: black;
+}
+
+.examGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.examCard {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.examCard:hover {
+    transform: translateY(-5px);
+}
+
+.examCard h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.examCard p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.finished {
+    color: red;
+    font-weight: bold;
+}
+
+.ongoing {
+    color: green;
+    font-weight: bold;
+}
+
+.noExams {
+    text-align: center;
+    font-size: 16px;
+    color: #777;
+}
+
+.chapterInput {
+    display: flex;
+    gap: 10px;
+}
+
+.chapterInput button, .chapterInput input{
+    height: 100%;
+}
+
+.chapterList {
+    display:  flex;
+    gap:10px;
+}
+
+.chapterItem { 
+    color: black;
+    list-style: none;
 }
